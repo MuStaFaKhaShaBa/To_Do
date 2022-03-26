@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- All About Tab On Browser -->
+    <meta name="theme-color" content="#F3F0E0" />
+
+    <link rel="Icon" href="IMG/list-svgrepo-com.svg" type="image/svg" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="CSS/all.min.css" />
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="CSS/main.css" />
+
+    <!-- Normalize -->
+    <link rel="stylesheet" href="CSS/normalize.css" />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Title -->
+    <title>To-Do List</title>
+  </head>
+
+  <body class="centerElement">
+    <div class="container">
+      <div class="profile centerElement">
+        <div class="front centerElement">
+          <img src="IMG/avatar-01.png" alt="" />
+          <h1></h1>
+          <p class="scroll"></p>
+        </div>
+        <div class="back">
+          <section><button title="Edite">Name :</button><p></p></section>
+          <section>
+            <button title="Edite">Email :</button>
+            <p></p>
+          </section>
+          <section><button title="Edite">Phone :</button><p></p></section>
+          <section>
+            <button title="Edite">Brief :</button>
+            <p class="scroll"></p>
+          </section>
+        </div>
+      </div>
+      <div class="list">
+        <h1>my to-do list</h1>
+        <div class="add-task">
+          <input type="text" maxlength="25" placeholder="Task Name" />
+          <button>
+            <i title="Insert" id="add" class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+        <section class="holder centerElement"></section>
+      </div>
+    </div>
+
+    <!-- Sweet Alert -->
+    <script src="JS/sweetalert2.all.min.js"></script>
+
+    <!-- Script Js -->
+    <script src="JS/main.js"></script>
+
+    <!-- Font Awesome Js -->
+    <script src="JS/all.min.js"></script>
+  </body>
+</html>

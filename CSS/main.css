@@ -1,0 +1,264 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+.container .profile {
+    transform-style: preserve-3d;
+    width: 30vw;
+    height: 60vh;
+    position: relative;
+    transition: 0.5s;
+}
+.container .profile .front {
+    text-align: center;
+    flex-direction: column;
+    padding: 30px;
+}
+.container .profile .front,
+.container .profile .back {
+    backface-visibility: hidden;
+    background-color: #ffc89b;
+    border-radius: 10px;
+    box-shadow: 0 0 7px 1px #3f29173b;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.container .profile .front img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+.container .profile .front > h1 {
+    font-weight: 700;
+    color: var(--fontColor);
+    text-transform: capitalize;
+    max-width: 300px;
+    margin: 20px auto 10px;
+}
+
+.container .profile .front p {
+    word-break:keep-all;
+    overflow: hidden auto;
+    padding: 10px 0;
+}
+.container .profile .front p,
+p:not(.back p:nth-child(2)) {
+    text-transform: capitalize;
+    font-size: 19px;
+    color: var(--p_Color);
+}
+
+.container .profile .back {
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 15px 5px 15px 10px;
+}
+.container .profile .back section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 50px;
+}
+.container .profile .back section button {
+    color: var(--mainColor);
+    font-size: 1.3em;
+    font-weight: 700;
+    word-wrap: break-word;
+    margin-bottom: 2px;
+}
+
+.container .profile .back section p {
+    font-size: 1.2em;
+    overflow: hidden;
+    color: var(--fontColor);
+    padding-left: 5px;
+}
+
+.container .profile .back section .scroll{
+    word-break: break-all;
+    overflow: hidden auto;
+    max-height:100px;
+}
+
+.container .list {
+    flex: 1;
+    text-align: center;
+    min-height: 80vh;
+    margin-left: 50px;
+}
+
+.container .list > h1 {
+    text-transform: uppercase;
+    color: var(--fontColor);
+    margin-bottom: 20px;
+}
+.container .list .holder {
+    flex-direction: column;
+    max-height: 70vh;
+    overflow: auto;
+    padding: 10px;
+    padding-top: 50px;
+}
+.holder::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 10px;
+}
+.holder::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: var(--fontColor);
+}
+
+.container .list .holder .task.pending {
+    background-color: #f26b6b;
+}
+.container .list .holder .task.pending :is(svg, p) {
+    color: #f3f0e0;
+}
+.container .list .holder .task.done {
+    --Color: #a7ccb3;
+    background-color: #a7ccb3;
+}
+
+.container .list .holder .task.done svg {
+    color: #0d0d0d;
+}
+
+.container .list .holder .task,
+.container .list .add-task {
+    --Color: #e5e5e5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    width: 100%;
+    background-color: #e5e5e5;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.container .list .add-task {
+    width: calc(100% - 30px);
+    margin-inline: auto;
+    padding: 15px 20px;
+}
+.container .list .add-task input {
+    width: 85%;
+    font-size: 20px;
+    border: 0;
+    background-color: transparent;
+    outline: none;
+    color: var(--fontColor);
+}
+.container .list .holder .task:hover {
+    animation: flashing 0.5s linear infinite alternate;
+}
+.container .list .holder .task svg:hover {
+    font-size: 22px;
+}
+.container .list .holder .task p {
+    width: 85%;
+    text-align: left;
+}
+.container .list .holder .task section svg:last-child {
+    margin-left: 10px;
+}
+.container .list .holder .task svg,
+.list .add-task svg {
+    transition: 0.3s;
+    color: var(--mainColor);
+    font-size: 20px;
+}
+.list button,
+.back button {
+    border: 0;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+@media (max-width: 991px) {
+    .container .profile {
+        width: 35vw;
+    }
+    .container .profile .back section p {
+        font-size: 1em;
+    }
+}
+@media (max-width: 767px) {
+    .container {
+        display: block;
+        margin-top: 20px;
+        width: 100%;
+        padding-bottom: 50px;
+    }
+    .container .profile {
+        width: 50vw;
+        margin: 0 auto;
+        height: 50vh;
+    }
+    .container .profile .front {
+        padding: 10px;
+    }
+    .container .profile .front img {
+        max-width: 50%;
+        border-radius: 50%;
+    }
+
+    .container .profile .front > h1 {
+        margin: 10px 0;
+        max-width: 200px;
+        font-size: 20px;
+    }
+    .container .profile .front > p {
+        max-width: 200px;
+        font-size: 17px;
+    }
+    .container .list {
+        margin-left: 0;
+        margin-top: 30px;
+    }
+}
+@media (max-width: 500px) {
+    .container .profile {
+        width: 80%;
+    }
+}
+@media (max-width: 370px) {
+    .container .profile {
+        height: 40vh;
+    }
+    .container .profile .front > :is(p, h1) {
+        margin-inline: 10px;
+    }
+    .container .list .task svg:last-child {
+        margin-top: 5px;
+    }
+    .container .profile .back section button {
+        font-size: 1em;
+    }
+    .container .profile .back section p {
+        font-size: 0.8em;
+    }
+}
+/* Alert user info*/
+.swalInput {
+    display: block;
+    margin-inline: auto;
+    padding: 10px 20px;
+    color: #7066e0;
+    border: 1px solid #7066e0;
+    outline: none;
+    overflow: hidden auto;
+    width: 70%;
+}
+.swalInput:not(:last-child) {
+    margin-bottom: 20px;
+}
