@@ -10,7 +10,7 @@
 }
 .container .profile {
     transform-style: preserve-3d;
-    width: 30vw;
+    width: 35vw;
     height: 60vh;
     position: relative;
     transition: 0.5s;
@@ -46,6 +46,7 @@
     word-break:keep-all;
     overflow: hidden auto;
     min-height: 55px;
+    width: 100%;
 }
 .container .profile .front p,
 p:not(.back p:nth-child(2)) {
@@ -218,7 +219,6 @@ p:not(.back p:nth-child(2)) {
         font-size: 20px;
     }
     .container .profile .front > p {
-        max-width: 200px;
         font-size: 17px;
     }
     .container .list {
