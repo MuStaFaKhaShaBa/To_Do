@@ -45,7 +45,7 @@
 .container .profile .front p {
     word-break:keep-all;
     overflow: hidden auto;
-    padding: 10px 0;
+    min-height: 55px;
 }
 .container .profile .front p,
 p:not(.back p:nth-child(2)) {
@@ -83,7 +83,7 @@ p:not(.back p:nth-child(2)) {
 }
 
 .container .profile .back section .scroll{
-    word-break: break-all;
+    word-break: keep-all;
     overflow: hidden auto;
     max-height:100px;
 }
@@ -225,6 +225,8 @@ p:not(.back p:nth-child(2)) {
         margin-left: 0;
         margin-top: 30px;
     }
+    
+   
 }
 @media (max-width: 500px) {
     .container .profile {

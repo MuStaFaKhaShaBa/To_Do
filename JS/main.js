@@ -35,7 +35,7 @@ class TaskTemp {
 //   document.querySelector(".container .profile").style = 'transform:rotateY(0)'
 // }
 
-document.ondblclick
+document.ondblclick;
 
 document.querySelector(".container .profile").ondblclick = () => {
   if (!asset) {
@@ -61,7 +61,7 @@ userData.forEach((el, index) => {
           inputLabel: `Your ${dataType[index]}`,
           inputPlaceholder: "Enter New Info",
           inputAttributes: {
-            maxlength: 25,
+            maxlength: 3 == index ? 200 : 25,
             autocapitalize: "on",
             autocorrect: "on",
           },
@@ -242,8 +242,9 @@ async function ShowDeleteEvent() {
 
     el.firstElementChild.onclick = async () => {
       // Show Details Event
+
       await Swal.fire({
-        icon: "info",
+        icon: task.status == "done" ? "success" : "warning",
         title: task.name,
         text: task.details,
         footer: new Date(task.id).toString().slice(0, 25),
